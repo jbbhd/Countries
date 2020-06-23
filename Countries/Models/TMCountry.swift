@@ -3,7 +3,7 @@ import UIKit
 struct TMCountry: Codable {
     
     let name: String
-    let flagURL: URL
+    let flagURL: URL?
     let capital: String
     let callingCodes: [String]
     let region: String

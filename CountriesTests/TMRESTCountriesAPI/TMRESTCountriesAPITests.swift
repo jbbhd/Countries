@@ -33,7 +33,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     
     func testThatCountrySearchSucceedsWithDefaultValues() {
         let expectation = self.expectation(description: "Search countries finishes.")
-        api.searchByName(nameToSearch) { (result) in
+        api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isSuccess())
             expectation.fulfill()
         }
@@ -43,7 +43,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     func testThatCountrySearchFailsWithEmptyString() {
         nameToSearch = ""
         let expectation = self.expectation(description: "Search countries finishes.")
-        api.searchByName(nameToSearch) { (result) in
+        api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isFailure())
             expectation.fulfill()
         }
@@ -57,7 +57,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     func testThatCountrySearchFailsIfURLFromStringFails() {
         urlForURLFromString = nil
         let expectation = self.expectation(description: "Search countries finishes.")
-        api.searchByName(nameToSearch) { (result) in
+        api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isFailure())
             expectation.fulfill()
         }
@@ -67,7 +67,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     func testThatCountrySearchFailsIfTaskErrors() {
         mockURLSession.error = error
         let expectation = self.expectation(description: "Search countries finishes.")
-        api.searchByName(nameToSearch) { (result) in
+        api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isFailure())
             expectation.fulfill()
         }
@@ -77,7 +77,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     func testThatCountrySearchFailsIfTaskFailsWithStatusCodeNot200() {
         mockURLSession.urlResponse = MockHTTPURLResponse(statusCode: 0)
         let expectation = self.expectation(description: "Search countries finishes.")
-        api.searchByName(nameToSearch) { (result) in
+        api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isFailure())
             expectation.fulfill()
         }
@@ -87,7 +87,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     func testThatCountrySearchErrorsIfDataIsNil() {
         mockURLSession.data = nil
         let expectation = self.expectation(description: "Search countries finishes.")
-        api.searchByName(nameToSearch) { (result) in
+        api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isFailure())
             expectation.fulfill()
         }
@@ -97,7 +97,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     func testThatCountrySearchErrorsIfJSONDecoderThrows() {
         mockJSONDecoder.error = error
         let expectation = self.expectation(description: "Search countries finishes.")
-        api.searchByName(nameToSearch) { (result) in
+        api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isFailure())
             expectation.fulfill()
         }
@@ -107,7 +107,7 @@ class TMRESTCountriesAPITests: XCTestCase {
     func testThatCountrySearchStartsTheURLSessionDataTask() {
         var didResume = false
         mockURLSessionDataTask.resumeCompletion = { didResume = true }
-        api.searchByName(nameToSearch) { (result) in }
+        api.countriesWithName(nameToSearch) { (result) in }
         XCTAssertTrue(didResume)
     }
 }

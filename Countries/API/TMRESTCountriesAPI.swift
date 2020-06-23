@@ -12,13 +12,16 @@ class TMRESTCountriesAPI {
     
     let jsonDecoder: TMJSONDecoder
     
-    init(urlSession: TMURLSession = URLSession.shared, urlFromString: @escaping (String) -> URL? = URL.init(string:), jsonDecoder: TMJSONDecoder = JSONDecoder()) {
+    init(
+        urlSession: TMURLSession = URLSession.shared,
+        urlFromString: @escaping (String) -> URL? = URL.init(string:),
+        jsonDecoder: TMJSONDecoder = JSONDecoder()) {
         self.urlSession = urlSession
         self.urlFromString = urlFromString
         self.jsonDecoder = jsonDecoder
     }
     
-    func searchByName(_ countryName: String, completion: @escaping (Result<[TMCountry], TMError>) -> Void) {
+    func countriesWithName(_ countryName: String, completion: @escaping (Result<[TMCountry], TMError>) -> Void) {
         guard !countryName.isEmpty else { return completion(.failure(.standard) )}
         guard let encodedName = countryName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return completion(.failure(.standard) )}
         guard let url = urlFromString("\(countrySearchPrefix)\(encodedName)") else { return completion(.failure(.standard)) }
@@ -37,3 +40,8 @@ class TMRESTCountriesAPI {
         }.resume()
     }
 }
+
+extension TMRESTCountriesAPI: TMCountriesSearcher {
+    
+}
+
