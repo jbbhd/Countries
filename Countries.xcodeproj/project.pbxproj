@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033A4D5724A25F5100A4C634 /* TMRESTCountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D5624A25F5100A4C634 /* TMRESTCountriesAPI.swift */; };
+		033A4D5924A2614800A4C634 /* TMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D5824A2614800A4C634 /* TMError.swift */; };
+		033A4D5B24A266A100A4C634 /* TMRESTCountriesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D5A24A266A100A4C634 /* TMRESTCountriesAPITests.swift */; };
+		033A4D5F24A2723A00A4C634 /* TMURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D5E24A2723A00A4C634 /* TMURLSessionDataTask.swift */; };
+		033A4D6124A2724A00A4C634 /* TMJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D6024A2724A00A4C634 /* TMJSONDecoder.swift */; };
+		033A4D6324A2726000A4C634 /* TMURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D6224A2726000A4C634 /* TMURLSession.swift */; };
+		033A4D6824A2729F00A4C634 /* URLSessionDataTask+TMURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D6724A2729F00A4C634 /* URLSessionDataTask+TMURLSessionDataTask.swift */; };
+		033A4D6A24A272BA00A4C634 /* JSONDecoder+TMJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D6924A272BA00A4C634 /* JSONDecoder+TMJSONEncoder.swift */; };
+		033A4D6C24A272EF00A4C634 /* URLSession+TMURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D6B24A272EF00A4C634 /* URLSession+TMURLSession.swift */; };
+		033A4D6F24A2731600A4C634 /* TMCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D6E24A2731600A4C634 /* TMCurrency.swift */; };
+		033A4D7124A2732700A4C634 /* TMLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D7024A2732700A4C634 /* TMLanguage.swift */; };
+		033A4D7324A2733C00A4C634 /* TMCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D7224A2733C00A4C634 /* TMCountry.swift */; };
 		03B8666124A25ED600E7FEF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8666024A25ED600E7FEF5 /* AppDelegate.swift */; };
 		03B8666324A25ED600E7FEF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8666224A25ED600E7FEF5 /* SceneDelegate.swift */; };
 		03B8666524A25ED600E7FEF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8666424A25ED600E7FEF5 /* ViewController.swift */; };
@@ -27,6 +39,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033A4D5624A25F5100A4C634 /* TMRESTCountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMRESTCountriesAPI.swift; sourceTree = "<group>"; };
+		033A4D5824A2614800A4C634 /* TMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMError.swift; sourceTree = "<group>"; };
+		033A4D5A24A266A100A4C634 /* TMRESTCountriesAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMRESTCountriesAPITests.swift; sourceTree = "<group>"; };
+		033A4D5E24A2723A00A4C634 /* TMURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMURLSessionDataTask.swift; sourceTree = "<group>"; };
+		033A4D6024A2724A00A4C634 /* TMJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMJSONDecoder.swift; sourceTree = "<group>"; };
+		033A4D6224A2726000A4C634 /* TMURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMURLSession.swift; sourceTree = "<group>"; };
+		033A4D6724A2729F00A4C634 /* URLSessionDataTask+TMURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionDataTask+TMURLSessionDataTask.swift"; sourceTree = "<group>"; };
+		033A4D6924A272BA00A4C634 /* JSONDecoder+TMJSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+TMJSONEncoder.swift"; sourceTree = "<group>"; };
+		033A4D6B24A272EF00A4C634 /* URLSession+TMURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+TMURLSession.swift"; sourceTree = "<group>"; };
+		033A4D6E24A2731600A4C634 /* TMCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCurrency.swift; sourceTree = "<group>"; };
+		033A4D7024A2732700A4C634 /* TMLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMLanguage.swift; sourceTree = "<group>"; };
+		033A4D7224A2733C00A4C634 /* TMCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountry.swift; sourceTree = "<group>"; };
 		03B8665D24A25ED600E7FEF5 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B8666024A25ED600E7FEF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03B8666224A25ED600E7FEF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +82,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033A4D5C24A2721E00A4C634 /* InjectionProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				033A4D5E24A2723A00A4C634 /* TMURLSessionDataTask.swift */,
+				033A4D6024A2724A00A4C634 /* TMJSONDecoder.swift */,
+				033A4D6224A2726000A4C634 /* TMURLSession.swift */,
+			);
+			path = InjectionProtocols;
+			sourceTree = "<group>";
+		};
+		033A4D6624A2728A00A4C634 /* InjectionConformance */ = {
+			isa = PBXGroup;
+			children = (
+				033A4D6924A272BA00A4C634 /* JSONDecoder+TMJSONEncoder.swift */,
+				033A4D6724A2729F00A4C634 /* URLSessionDataTask+TMURLSessionDataTask.swift */,
+				033A4D6B24A272EF00A4C634 /* URLSession+TMURLSession.swift */,
+			);
+			path = InjectionConformance;
+			sourceTree = "<group>";
+		};
+		033A4D6D24A2730600A4C634 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				033A4D6E24A2731600A4C634 /* TMCurrency.swift */,
+				033A4D7024A2732700A4C634 /* TMLanguage.swift */,
+				033A4D7224A2733C00A4C634 /* TMCountry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		033A4D7424A2735C00A4C634 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		03B8665424A25ED600E7FEF5 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +140,13 @@
 		03B8665F24A25ED600E7FEF5 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				033A4D5C24A2721E00A4C634 /* InjectionProtocols */,
+				033A4D6624A2728A00A4C634 /* InjectionConformance */,
+				033A4D7424A2735C00A4C634 /* Extensions */,
+				033A4D6D24A2730600A4C634 /* Models */,
 				03B8666024A25ED600E7FEF5 /* AppDelegate.swift */,
+				033A4D5624A25F5100A4C634 /* TMRESTCountriesAPI.swift */,
+				033A4D5824A2614800A4C634 /* TMError.swift */,
 				03B8666224A25ED600E7FEF5 /* SceneDelegate.swift */,
 				03B8666424A25ED600E7FEF5 /* ViewController.swift */,
 				03B8666624A25ED600E7FEF5 /* Main.storyboard */,
@@ -94,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				03B8667724A25ED900E7FEF5 /* CountriesTests.swift */,
+				033A4D5A24A266A100A4C634 /* TMRESTCountriesAPITests.swift */,
 				03B8667924A25ED900E7FEF5 /* Info.plist */,
 			);
 			path = CountriesTests;
@@ -200,9 +268,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033A4D5F24A2723A00A4C634 /* TMURLSessionDataTask.swift in Sources */,
 				03B8666524A25ED600E7FEF5 /* ViewController.swift in Sources */,
+				033A4D6C24A272EF00A4C634 /* URLSession+TMURLSession.swift in Sources */,
+				033A4D6F24A2731600A4C634 /* TMCurrency.swift in Sources */,
+				033A4D6A24A272BA00A4C634 /* JSONDecoder+TMJSONEncoder.swift in Sources */,
 				03B8666124A25ED600E7FEF5 /* AppDelegate.swift in Sources */,
+				033A4D6824A2729F00A4C634 /* URLSessionDataTask+TMURLSessionDataTask.swift in Sources */,
+				033A4D6124A2724A00A4C634 /* TMJSONDecoder.swift in Sources */,
+				033A4D5924A2614800A4C634 /* TMError.swift in Sources */,
+				033A4D6324A2726000A4C634 /* TMURLSession.swift in Sources */,
+				033A4D5724A25F5100A4C634 /* TMRESTCountriesAPI.swift in Sources */,
+				033A4D7324A2733C00A4C634 /* TMCountry.swift in Sources */,
 				03B8666324A25ED600E7FEF5 /* SceneDelegate.swift in Sources */,
+				033A4D7124A2732700A4C634 /* TMLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033A4D5B24A266A100A4C634 /* TMRESTCountriesAPITests.swift in Sources */,
 				03B8667824A25ED900E7FEF5 /* CountriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
