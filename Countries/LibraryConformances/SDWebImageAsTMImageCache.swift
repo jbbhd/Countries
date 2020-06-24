@@ -1,10 +1,18 @@
 import UIKit
 import SDWebImage
 
+private extension String {
+    
+    static let flagThumbnailImageName = "FlagThumbnail"
+}
+
 class SDWebImageAsTMImageCache: TMImageCache {
     
     func setImage(at url: URL?, to imageView: UIImageView?) {
-        imageView?.sd_setImage(with: url, completed: nil)
+        imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: .flagThumbnailImageName), options: [], context: [
+            .imagePreserveAspectRatio: true,
+            .imageThumbnailPixelSize: CGSize(width: 0, height: 0),
+        ])
     }
     
     func cancelImageLoad(for imageView: UIImageView?) {

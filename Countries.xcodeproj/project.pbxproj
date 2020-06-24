@@ -21,6 +21,13 @@
 		0359DCA524A28214003C0E62 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359DCA424A28214003C0E62 /* MockURLSession.swift */; };
 		0359DCA724A28225003C0E62 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359DCA624A28225003C0E62 /* MockURLSessionDataTask.swift */; };
 		0359DCA924A2825E003C0E62 /* MockHTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359DCA824A2825E003C0E62 /* MockHTTPURLResponse.swift */; };
+		035C245424A2EFB800FEF43D /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 035C245324A2EFB800FEF43D /* SDWebImageSVGCoder */; };
+		035C245624A2F2B100FEF43D /* TMCountriesViewControllerIniting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C245524A2F2B100FEF43D /* TMCountriesViewControllerIniting.swift */; };
+		035C245824A3BA3E00FEF43D /* TMCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C245724A3BA3E00FEF43D /* TMCountryTableViewCell.swift */; };
+		035C245A24A3C4D700FEF43D /* TMCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C245924A3C4D700FEF43D /* TMCountryViewController.swift */; };
+		038FB31724A3D08600A22CD0 /* TMCountryViewModelIniting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FB31624A3D08600A22CD0 /* TMCountryViewModelIniting.swift */; };
+		038FB31924A3D50200A22CD0 /* TMCountryViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FB31824A3D50200A22CD0 /* TMCountryViewModeling.swift */; };
+		038FB31B24A3D53200A22CD0 /* TMCountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FB31A24A3D53200A22CD0 /* TMCountryViewModel.swift */; };
 		03B8666124A25ED600E7FEF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8666024A25ED600E7FEF5 /* AppDelegate.swift */; };
 		03B8666324A25ED600E7FEF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8666224A25ED600E7FEF5 /* SceneDelegate.swift */; };
 		03B8666524A25ED600E7FEF5 /* TMCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8666424A25ED600E7FEF5 /* TMCountriesViewController.swift */; };
@@ -29,10 +36,9 @@
 		03B8666D24A25ED900E7FEF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B8666B24A25ED900E7FEF5 /* LaunchScreen.storyboard */; };
 		03F5462B24A2AFCB005ACC12 /* SDWebImageAsTMImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5462A24A2AFCB005ACC12 /* SDWebImageAsTMImageCache.swift */; };
 		03F5462D24A2B036005ACC12 /* TMImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5462C24A2B036005ACC12 /* TMImageCache.swift */; };
-		03F5462F24A2B174005ACC12 /* TMCountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5462E24A2B174005ACC12 /* TMCountriesViewModel.swift */; };
-		03F5463124A2B64C005ACC12 /* TMCountriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5463024A2B64C005ACC12 /* TMCountriesViewControllerTests.swift */; };
-		03F5463424A2B816005ACC12 /* TMCountriesSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5463324A2B816005ACC12 /* TMCountriesSearcher.swift */; };
-		03F5463B24A2B9C1005ACC12 /* TMCountriesSearchCacheImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5463A24A2B9C1005ACC12 /* TMCountriesSearchCacheImpl.swift */; };
+		03F5462F24A2B174005ACC12 /* TMCountriesViewModelIng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5462E24A2B174005ACC12 /* TMCountriesViewModelIng.swift */; };
+		03F5463424A2B816005ACC12 /* TMCountriesSearching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5463324A2B816005ACC12 /* TMCountriesSearching.swift */; };
+		03F5463B24A2B9C1005ACC12 /* TMCountriesSearchCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5463A24A2B9C1005ACC12 /* TMCountriesSearchCache.swift */; };
 		03FF3B1324A285C100384353 /* TMRESTCountriesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D5A24A266A100A4C634 /* TMRESTCountriesAPITests.swift */; };
 		03FF3B1924A2882900384353 /* MockJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B1824A2882900384353 /* MockJSONDecoder.swift */; };
 		03FF3B1E24A290F100384353 /* TMCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B1D24A290F100384353 /* TMCoordinator.swift */; };
@@ -42,10 +48,9 @@
 		03FF3B2624A2963800384353 /* UINavigationController+TMRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B2524A2963800384353 /* UINavigationController+TMRootViewController.swift */; };
 		03FF3B2824A2975700384353 /* TMStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B2724A2975700384353 /* TMStoryboard.swift */; };
 		03FF3B2A24A2977100384353 /* UIStoryboard+TMStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B2924A2977100384353 /* UIStoryboard+TMStoryboard.swift */; };
-		03FF3B2E24A298B600384353 /* TMCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B2D24A298B600384353 /* TMCoordinatorTests.swift */; };
 		03FF3B3324A29F1D00384353 /* TMCountriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B3224A29F1D00384353 /* TMCountriesViewModelTests.swift */; };
-		03FF3B3524A29F4400384353 /* TMCountriesViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B3424A29F4400384353 /* TMCountriesViewModelImpl.swift */; };
-		03FF3B3924A29F8100384353 /* TMCountriesViewModelImplDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B3824A29F8100384353 /* TMCountriesViewModelImplDelegate.swift */; };
+		03FF3B3524A29F4400384353 /* TMCountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B3424A29F4400384353 /* TMCountriesViewModel.swift */; };
+		03FF3B3924A29F8100384353 /* TMCountriesViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3B3824A29F8100384353 /* TMCountriesViewModelDelegate.swift */; };
 		03FF3B4224A2AA3900384353 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03FF3B4124A2AA3900384353 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +63,19 @@
 			remoteInfo = Countries;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		035C244B24A2ED9700FEF43D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		033A4D5624A25F5100A4C634 /* TMRESTCountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMRESTCountriesAPI.swift; sourceTree = "<group>"; };
@@ -75,6 +93,13 @@
 		0359DCA424A28214003C0E62 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		0359DCA624A28225003C0E62 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		0359DCA824A2825E003C0E62 /* MockHTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPURLResponse.swift; sourceTree = "<group>"; };
+		035C244424A2EBB500FEF43D /* Countries-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Countries-Bridging-Header.h"; sourceTree = "<group>"; };
+		035C245524A2F2B100FEF43D /* TMCountriesViewControllerIniting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewControllerIniting.swift; sourceTree = "<group>"; };
+		035C245724A3BA3E00FEF43D /* TMCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountryTableViewCell.swift; sourceTree = "<group>"; };
+		035C245924A3C4D700FEF43D /* TMCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountryViewController.swift; sourceTree = "<group>"; };
+		038FB31624A3D08600A22CD0 /* TMCountryViewModelIniting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountryViewModelIniting.swift; sourceTree = "<group>"; };
+		038FB31824A3D50200A22CD0 /* TMCountryViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountryViewModeling.swift; sourceTree = "<group>"; };
+		038FB31A24A3D53200A22CD0 /* TMCountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountryViewModel.swift; sourceTree = "<group>"; };
 		03B8665D24A25ED600E7FEF5 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B8666024A25ED600E7FEF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03B8666224A25ED600E7FEF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,10 +112,9 @@
 		03B8667924A25ED900E7FEF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03F5462A24A2AFCB005ACC12 /* SDWebImageAsTMImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageAsTMImageCache.swift; sourceTree = "<group>"; };
 		03F5462C24A2B036005ACC12 /* TMImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMImageCache.swift; sourceTree = "<group>"; };
-		03F5462E24A2B174005ACC12 /* TMCountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewModel.swift; sourceTree = "<group>"; };
-		03F5463024A2B64C005ACC12 /* TMCountriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewControllerTests.swift; sourceTree = "<group>"; };
-		03F5463324A2B816005ACC12 /* TMCountriesSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesSearcher.swift; sourceTree = "<group>"; };
-		03F5463A24A2B9C1005ACC12 /* TMCountriesSearchCacheImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesSearchCacheImpl.swift; sourceTree = "<group>"; };
+		03F5462E24A2B174005ACC12 /* TMCountriesViewModelIng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewModelIng.swift; sourceTree = "<group>"; };
+		03F5463324A2B816005ACC12 /* TMCountriesSearching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesSearching.swift; sourceTree = "<group>"; };
+		03F5463A24A2B9C1005ACC12 /* TMCountriesSearchCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesSearchCache.swift; sourceTree = "<group>"; };
 		03FF3B1824A2882900384353 /* MockJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSONDecoder.swift; sourceTree = "<group>"; };
 		03FF3B1D24A290F100384353 /* TMCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCoordinator.swift; sourceTree = "<group>"; };
 		03FF3B1F24A2959F00384353 /* UIWindow+TMWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+TMWindow.swift"; sourceTree = "<group>"; };
@@ -99,10 +123,9 @@
 		03FF3B2524A2963800384353 /* UINavigationController+TMRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+TMRootViewController.swift"; sourceTree = "<group>"; };
 		03FF3B2724A2975700384353 /* TMStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMStoryboard.swift; sourceTree = "<group>"; };
 		03FF3B2924A2977100384353 /* UIStoryboard+TMStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+TMStoryboard.swift"; sourceTree = "<group>"; };
-		03FF3B2D24A298B600384353 /* TMCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCoordinatorTests.swift; sourceTree = "<group>"; };
 		03FF3B3224A29F1D00384353 /* TMCountriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewModelTests.swift; sourceTree = "<group>"; };
-		03FF3B3424A29F4400384353 /* TMCountriesViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewModelImpl.swift; sourceTree = "<group>"; };
-		03FF3B3824A29F8100384353 /* TMCountriesViewModelImplDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewModelImplDelegate.swift; sourceTree = "<group>"; };
+		03FF3B3424A29F4400384353 /* TMCountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewModel.swift; sourceTree = "<group>"; };
+		03FF3B3824A29F8100384353 /* TMCountriesViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountriesViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03FF3B4224A2AA3900384353 /* SDWebImage in Frameworks */,
+				035C245424A2EFB800FEF43D /* SDWebImageSVGCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,8 +151,11 @@
 		033A4D5C24A2721E00A4C634 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				03F5462E24A2B174005ACC12 /* TMCountriesViewModel.swift */,
-				03F5463324A2B816005ACC12 /* TMCountriesSearcher.swift */,
+				03F5462E24A2B174005ACC12 /* TMCountriesViewModelIng.swift */,
+				038FB31824A3D50200A22CD0 /* TMCountryViewModeling.swift */,
+				035C245524A2F2B100FEF43D /* TMCountriesViewControllerIniting.swift */,
+				03F5463324A2B816005ACC12 /* TMCountriesSearching.swift */,
+				038FB31624A3D08600A22CD0 /* TMCountryViewModelIniting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -179,6 +206,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		038FB31C24A3D53B00A22CD0 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				038FB31A24A3D53200A22CD0 /* TMCountryViewModel.swift */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
 		03B8665424A25ED600E7FEF5 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +253,7 @@
 				03B8666924A25ED900E7FEF5 /* Assets.xcassets */,
 				03B8666B24A25ED900E7FEF5 /* LaunchScreen.storyboard */,
 				03B8666E24A25ED900E7FEF5 /* Info.plist */,
+				035C244424A2EBB500FEF43D /* Countries-Bridging-Header.h */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -225,9 +261,7 @@
 		03B8667624A25ED900E7FEF5 /* CountriesTests */ = {
 			isa = PBXGroup;
 			children = (
-				03F5463224A2B653005ACC12 /* TMCountriesViewController */,
 				03FF3B3124A29F0700384353 /* TMCountriesViewModel */,
-				03FF3B2C24A2989E00384353 /* TMCoordinator */,
 				03FF3B2B24A2988300384353 /* TMRESTCountriesAPI */,
 				0359DCA024A280A2003C0E62 /* Result+isFailure.swift */,
 				0359DCA224A280AB003C0E62 /* Result+isSuccess.swift */,
@@ -236,18 +270,10 @@
 			path = CountriesTests;
 			sourceTree = "<group>";
 		};
-		03F5463224A2B653005ACC12 /* TMCountriesViewController */ = {
-			isa = PBXGroup;
-			children = (
-				03F5463024A2B64C005ACC12 /* TMCountriesViewControllerTests.swift */,
-			);
-			path = TMCountriesViewController;
-			sourceTree = "<group>";
-		};
 		03F5463924A2B9B3005ACC12 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				03F5463A24A2B9C1005ACC12 /* TMCountriesSearchCacheImpl.swift */,
+				03F5463A24A2B9C1005ACC12 /* TMCountriesSearchCache.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -285,14 +311,6 @@
 			path = TMRESTCountriesAPI;
 			sourceTree = "<group>";
 		};
-		03FF3B2C24A2989E00384353 /* TMCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				03FF3B2D24A298B600384353 /* TMCoordinatorTests.swift */,
-			);
-			path = TMCoordinator;
-			sourceTree = "<group>";
-		};
 		03FF3B3124A29F0700384353 /* TMCountriesViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				03FF3B3724A29F7200384353 /* Countries */,
+				038FB31C24A3D53B00A22CD0 /* Country */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -312,8 +331,8 @@
 		03FF3B3724A29F7200384353 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				03FF3B3424A29F4400384353 /* TMCountriesViewModelImpl.swift */,
-				03FF3B3824A29F8100384353 /* TMCountriesViewModelImplDelegate.swift */,
+				03FF3B3424A29F4400384353 /* TMCountriesViewModel.swift */,
+				03FF3B3824A29F8100384353 /* TMCountriesViewModelDelegate.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -322,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				03B8666424A25ED600E7FEF5 /* TMCountriesViewController.swift */,
+				035C245924A3C4D700FEF43D /* TMCountryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +349,7 @@
 		03FF3B4424A2AA6100384353 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				035C245724A3BA3E00FEF43D /* TMCountryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +364,7 @@
 				03B8665924A25ED600E7FEF5 /* Sources */,
 				03B8665A24A25ED600E7FEF5 /* Frameworks */,
 				03B8665B24A25ED600E7FEF5 /* Resources */,
+				035C244B24A2ED9700FEF43D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,6 +373,7 @@
 			name = Countries;
 			packageProductDependencies = (
 				03FF3B4124A2AA3900384353 /* SDWebImage */,
+				035C245324A2EFB800FEF43D /* SDWebImageSVGCoder */,
 			);
 			productName = Countries;
 			productReference = 03B8665D24A25ED600E7FEF5 /* Countries.app */;
@@ -404,6 +427,7 @@
 			mainGroup = 03B8665424A25ED600E7FEF5;
 			packageReferences = (
 				03FF3B4024A2AA3900384353 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				035C245224A2EFB800FEF43D /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 			);
 			productRefGroup = 03B8665E24A25ED600E7FEF5 /* Products */;
 			projectDirPath = "";
@@ -443,29 +467,35 @@
 				03B8666524A25ED600E7FEF5 /* TMCountriesViewController.swift in Sources */,
 				033A4D6C24A272EF00A4C634 /* URLSession+TMURLSession.swift in Sources */,
 				03F5462B24A2AFCB005ACC12 /* SDWebImageAsTMImageCache.swift in Sources */,
-				03FF3B3524A29F4400384353 /* TMCountriesViewModelImpl.swift in Sources */,
+				03FF3B3524A29F4400384353 /* TMCountriesViewModel.swift in Sources */,
 				033A4D6F24A2731600A4C634 /* TMCurrency.swift in Sources */,
 				033A4D6A24A272BA00A4C634 /* JSONDecoder+TMJSONEncoder.swift in Sources */,
 				03FF3B2624A2963800384353 /* UINavigationController+TMRootViewController.swift in Sources */,
+				035C245824A3BA3E00FEF43D /* TMCountryTableViewCell.swift in Sources */,
+				038FB31924A3D50200A22CD0 /* TMCountryViewModeling.swift in Sources */,
 				03B8666124A25ED600E7FEF5 /* AppDelegate.swift in Sources */,
-				03F5463B24A2B9C1005ACC12 /* TMCountriesSearchCacheImpl.swift in Sources */,
+				03F5463B24A2B9C1005ACC12 /* TMCountriesSearchCache.swift in Sources */,
 				033A4D6124A2724A00A4C634 /* TMJSONDecoder.swift in Sources */,
 				03FF3B2224A295AA00384353 /* TMWindow.swift in Sources */,
 				033A4D5924A2614800A4C634 /* TMError.swift in Sources */,
-				03F5463424A2B816005ACC12 /* TMCountriesSearcher.swift in Sources */,
+				03F5463424A2B816005ACC12 /* TMCountriesSearching.swift in Sources */,
 				03FF3B1E24A290F100384353 /* TMCoordinator.swift in Sources */,
 				03FF3B2424A2962900384353 /* TMRootViewController.swift in Sources */,
+				035C245624A2F2B100FEF43D /* TMCountriesViewControllerIniting.swift in Sources */,
+				038FB31724A3D08600A22CD0 /* TMCountryViewModelIniting.swift in Sources */,
 				03FF3B2A24A2977100384353 /* UIStoryboard+TMStoryboard.swift in Sources */,
+				038FB31B24A3D53200A22CD0 /* TMCountryViewModel.swift in Sources */,
 				033A4D6324A2726000A4C634 /* TMURLSession.swift in Sources */,
 				033A4D5724A25F5100A4C634 /* TMRESTCountriesAPI.swift in Sources */,
-				03F5462F24A2B174005ACC12 /* TMCountriesViewModel.swift in Sources */,
+				03F5462F24A2B174005ACC12 /* TMCountriesViewModelIng.swift in Sources */,
 				03FF3B2824A2975700384353 /* TMStoryboard.swift in Sources */,
+				035C245A24A3C4D700FEF43D /* TMCountryViewController.swift in Sources */,
 				03FF3B2024A2959F00384353 /* UIWindow+TMWindow.swift in Sources */,
 				033A4D7324A2733C00A4C634 /* TMCountry.swift in Sources */,
 				03B8666324A25ED600E7FEF5 /* SceneDelegate.swift in Sources */,
 				033A4D7124A2732700A4C634 /* TMLanguage.swift in Sources */,
 				03F5462D24A2B036005ACC12 /* TMImageCache.swift in Sources */,
-				03FF3B3924A29F8100384353 /* TMCountriesViewModelImplDelegate.swift in Sources */,
+				03FF3B3924A29F8100384353 /* TMCountriesViewModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,8 +506,6 @@
 				03FF3B1924A2882900384353 /* MockJSONDecoder.swift in Sources */,
 				0359DCA524A28214003C0E62 /* MockURLSession.swift in Sources */,
 				0359DCA924A2825E003C0E62 /* MockHTTPURLResponse.swift in Sources */,
-				03FF3B2E24A298B600384353 /* TMCoordinatorTests.swift in Sources */,
-				03F5463124A2B64C005ACC12 /* TMCountriesViewControllerTests.swift in Sources */,
 				03FF3B3324A29F1D00384353 /* TMCountriesViewModelTests.swift in Sources */,
 				0359DCA724A28225003C0E62 /* MockURLSessionDataTask.swift in Sources */,
 				03FF3B1324A285C100384353 /* TMRESTCountriesAPITests.swift in Sources */,
@@ -636,6 +664,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 499M6NJV33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Countries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -654,6 +687,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 499M6NJV33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Countries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -743,6 +781,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		035C245224A2EFB800FEF43D /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 		03FF3B4024A2AA3900384353 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
@@ -754,6 +800,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		035C245324A2EFB800FEF43D /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 035C245224A2EFB800FEF43D /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
 		03FF3B4124A2AA3900384353 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 03FF3B4024A2AA3900384353 /* XCRemoteSwiftPackageReference "SDWebImage" */;

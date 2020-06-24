@@ -24,7 +24,10 @@ class TMRESTCountriesAPITests: XCTestCase {
         mockURLSession.error = nil
         mockURLSession.mockDataTask = mockURLSessionDataTask
         nameToSearch = "United"
-        api = TMRESTCountriesAPI(urlSession: mockURLSession, urlFromString: { _ in return self.urlForURLFromString }, jsonDecoder: mockJSONDecoder)
+        api = TMRESTCountriesAPI(
+            urlSession: mockURLSession,
+            urlFromString: { _ in return self.urlForURLFromString },
+            jsonDecoder: mockJSONDecoder)
     }
 
     override func tearDownWithError() throws {
@@ -32,6 +35,16 @@ class TMRESTCountriesAPITests: XCTestCase {
     }
     
     func testThatCountrySearchSucceedsWithDefaultValues() {
+        let expectation = self.expectation(description: "Search countries finishes.")
+        api.countriesWithName(nameToSearch) { (result) in
+            XCTAssertTrue(result.isSuccess())
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testThatCountrySearchSucceedsWithDefaultValuesAndStatusCode404() {
+        response.statusCodeOverride = 404
         let expectation = self.expectation(description: "Search countries finishes.")
         api.countriesWithName(nameToSearch) { (result) in
             XCTAssertTrue(result.isSuccess())

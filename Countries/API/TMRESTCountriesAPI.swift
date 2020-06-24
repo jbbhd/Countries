@@ -6,11 +6,11 @@ class TMRESTCountriesAPI {
     
     private let countrySearchPrefix = "https://restcountries.eu/rest/v2/name/"
     
-    let urlSession: TMURLSession
+    private let urlSession: TMURLSession
     
-    let urlFromString: (String) -> URL?
+    private let urlFromString: (String) -> URL?
     
-    let jsonDecoder: TMJSONDecoder
+    private let jsonDecoder: TMJSONDecoder
     
     init(
         urlSession: TMURLSession = URLSession.shared,
@@ -30,6 +30,7 @@ class TMRESTCountriesAPI {
                 return completion(.failure(.wrapped(error)))
             }
             guard let httpResponse = response as? HTTPURLResponse else { return completion(.failure(.standard)) }
+            if httpResponse.statusCode == 404 { return completion(.success([])) }
             guard httpResponse.statusCode == 200 else { return completion(.failure(.statusCode(httpResponse.statusCode))) }
             guard let data = data else { return completion(.failure(.standard)) }
             do {
@@ -41,7 +42,6 @@ class TMRESTCountriesAPI {
     }
 }
 
-extension TMRESTCountriesAPI: TMCountriesSearcher {
+extension TMRESTCountriesAPI: TMCountriesSearching {
     
 }
-

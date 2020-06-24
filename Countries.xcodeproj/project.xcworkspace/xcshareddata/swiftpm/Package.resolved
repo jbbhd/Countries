@@ -9,6 +9,15 @@
           "revision": "df8bd89a865120fbb84427afc8e9cf7937b924f5",
           "version": "5.8.2"
         }
+      },
+      {
+        "package": "SDWebImageSVGCoder",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImageSVGCoder",
+        "state": {
+          "branch": null,
+          "revision": "9de72b862ca813464c9b2780146f29dc72aebc8e",
+          "version": "1.5.0"
+        }
       }
     ]
   },

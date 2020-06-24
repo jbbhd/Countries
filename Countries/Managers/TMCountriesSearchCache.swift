@@ -2,16 +2,16 @@ import UIKit
 
 class TMCountriesSearchCache {
     
-    private let searcher: TMCountriesSearcher
+    private let searcher: TMCountriesSearching
     
     private var cache: [String: [TMCountry]] = [:]
         
-    init(searcher: TMCountriesSearcher) {
+    init(searcher: TMCountriesSearching) {
         self.searcher = searcher
     }
 }
 
-extension TMCountriesSearchCache: TMCountriesSearcher {
+extension TMCountriesSearchCache: TMCountriesSearching {
     
     func countriesWithName(_ name: String, completion: @escaping (Result<[TMCountry], TMError>) -> Void) {
         if let results = cache[name] {

@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-protocol TMCountriesViewModel: class {
+protocol TMCountriesViewModeling: class {
 
     var numberOfCountries: CurrentValueSubject<Int, Never> { get }
     func countryName(at index: Int) -> String

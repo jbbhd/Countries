@@ -1,15 +1,15 @@
 import UIKit
 
-struct TMCountry: Codable {
+struct TMCountry: Decodable {
     
     let name: String
     let flagURL: URL?
     let capital: String
     let callingCodes: [String]
     let region: String
-    let subRegion: String?
-    let timeZones: [TimeZone]?
-    let currencies: [TMCurrency]
+    let subregion: String?
+    var timeZones: [String]?
+    let currencies: [TMCurrency]?
     let languages: [TMLanguage]
     
     enum CodingKeys: String, CodingKey {
@@ -18,8 +18,8 @@ struct TMCountry: Codable {
         case capital
         case callingCodes
         case region
-        case subRegion
-        case timeZones
+        case subregion = "subregion"
+        case timeZones = "timezones"
         case currencies
         case languages
     }

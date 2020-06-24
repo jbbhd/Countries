@@ -1,7 +1,7 @@
 import XCTest
 @testable import Countries
 
-class TMCountriesViewModelImplTests: XCTestCase {
+class TMCountriesViewModelTests: XCTestCase {
     
     func testThatSetCountriesSetsCountries() {
         
