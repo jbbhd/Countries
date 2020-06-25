@@ -9,8 +9,8 @@ class TMCountryViewModelTests: XCTestCase {
     var callingCodes: [String]!
     var region: String!
     var subregion: String?
-    var timeZones: [String]?
-    var currencies: [TMCurrency]?
+    var timeZones: [String]!
+    var currencies: [TMCurrency]!
     var languages: [TMLanguage] = []
     
     let emptyCountryName = ""
@@ -25,25 +25,28 @@ class TMCountryViewModelTests: XCTestCase {
     let emptyRegion = ""
     let nonEmptyRegion = "Europe"
     
-    let nilSubregion: String? = nil
     let emptySubregion: String? = ""
     let nonEmptySubregion: String? = "Western Europe"
     
     let emptyCallingCodes: [String]? = []
     let singleCallingCode: [String]? = ["CallingCode1"]
     let multipleCallingCodes: [String]? = ["CallingCode1", "CallingCode2"]
+    let multipleEmptyCallingCodes: [String]? = ["", ""]
     
-    let nilTimeZones: [String]? = nil
     let emptyTimeZones: [String]? = []
     let singleTimeZone: [String]? = ["TimeZone1"]
     let multipleTimeZones: [String]? = ["TimeZone1", "TimeZone2"]
+    let multipleEmptyTimeZones: [String]? = ["", ""]
     
-    let nilCurrencies: [TMCurrency]? = nil
     let emptyCurrencies: [TMCurrency]? = []
     let singleCurrency: [TMCurrency]? = [TMCurrency(code: "EUR", name: "Euro", symbol: "€")]
     let multipleCurrencies: [TMCurrency]? = [
         TMCurrency(code: "EUR", name: "Euro", symbol: "€"),
         TMCurrency(code: "USD", name: "Dollar", symbol: "$")
+    ]
+    let multipleEmptyCurrencies: [TMCurrency]? = [
+        TMCurrency(code: nil, name: nil, symbol: nil),
+        TMCurrency(code: nil, name: nil, symbol: nil)
     ]
     
     let emptyLanguages: [TMLanguage] = []
@@ -144,10 +147,6 @@ class TMCountryViewModelTests: XCTestCase {
     // MARK: Optional Strings
     
     func testThatSubregionTextIsCorrectForNilEmptyAndNonEmptySubregion() {
-        subregion = nilSubregion
-        setupViewModel()
-        XCTAssertEqual(viewModel.subregionText, "None")
-        
         subregion = emptySubregion
         setupViewModel()
         XCTAssertEqual(viewModel.subregionText, "None")
@@ -171,6 +170,10 @@ class TMCountryViewModelTests: XCTestCase {
         callingCodes = multipleCallingCodes
         setupViewModel()
         XCTAssertEqual(viewModel.callingCodeText, callingCodes.joined(separator: ", "))
+        
+        callingCodes = multipleEmptyCallingCodes
+        setupViewModel()
+        XCTAssertEqual(viewModel.callingCodeText, "None")
     }
     
     func testThatCallingCodeTextIsCorrectForEmptySingleAndMultipleLanguages() {
@@ -186,14 +189,8 @@ class TMCountryViewModelTests: XCTestCase {
         setupViewModel()
         XCTAssertEqual(viewModel.languagesText, languages.map { $0.displayString }.joined(separator: ", "))
     }
-    
-    // MARK: Optional Arrays
-    
-    func testThatCallingCodeTextIsCorrectForNilEmptySingleAndMultipleTimeZones() {
-        timeZones = nilTimeZones
-        setupViewModel()
-        XCTAssertEqual(viewModel.timeZonesText, "None")
         
+    func testThatCallingCodeTextIsCorrectForNilEmptySingleAndMultipleTimeZones() {
         timeZones = emptyTimeZones
         setupViewModel()
         XCTAssertEqual(viewModel.timeZonesText, "None")
@@ -205,13 +202,13 @@ class TMCountryViewModelTests: XCTestCase {
         timeZones = multipleTimeZones
         setupViewModel()
         XCTAssertEqual(viewModel.timeZonesText, timeZones?.joined(separator: ", "))
+        
+        timeZones = multipleEmptyTimeZones
+        setupViewModel()
+        XCTAssertEqual(viewModel.timeZonesText, "None")
     }
     
     func testThatCallingCodeTextIsCorrectForNilEmptySingleAndMultipleCurrencies() {
-        currencies = nilCurrencies
-        setupViewModel()
-        XCTAssertEqual(viewModel.currenciesText, "None")
-        
         currencies = emptyCurrencies
         setupViewModel()
         XCTAssertEqual(viewModel.currenciesText, "None")
@@ -223,5 +220,9 @@ class TMCountryViewModelTests: XCTestCase {
         currencies = multipleCurrencies
         setupViewModel()
         XCTAssertEqual(viewModel.currenciesText, currencies?.map { $0.displayString }.joined(separator: ", "))
+        
+        currencies = multipleEmptyCurrencies
+        setupViewModel()
+        XCTAssertEqual(viewModel.currenciesText, "None")
     }
 }

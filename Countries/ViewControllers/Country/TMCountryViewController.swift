@@ -2,6 +2,10 @@ import UIKit
 
 class TMCountryViewController: UIViewController {
 
+    static func createDummyViewController(viewModel: TMCountryViewModeling, imageCache: TMImageCache) -> TMCountryViewController {
+        return TMCountryViewController(viewModel: viewModel, imageCache: imageCache)
+    }
+    
     @IBOutlet private weak var flagImageView: UIImageView!
  
     @IBOutlet private weak var capitalTitleLabel: UILabel!
@@ -35,6 +39,57 @@ class TMCountryViewController: UIViewController {
     private var viewModel: TMCountryViewModeling!
     
     private var imageCache: TMImageCache!
+    
+    private init(viewModel: TMCountryViewModeling, imageCache: TMImageCache) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+        self.imageCache = imageCache
+        let flagImageView = UIImageView()
+        let capitalTitleLabel = UILabel()
+        let callingCodeTitleLabel = UILabel()
+        let regionTitleLabel = UILabel()
+        let subregionTitleLabel = UILabel()
+        let timeZonesTitleLabel = UILabel()
+        let currenciesTitleLabel = UILabel()
+        let languagesTitleLabel = UILabel()
+        let capitalLabel = UILabel()
+        let callingCodeLabel = UILabel()
+        let regionLabel = UILabel()
+        let subregionLabel = UILabel()
+        let timeZonesLabel = UILabel()
+        let currenciesLabel = UILabel()
+        let languagesLabel = UILabel()
+        self.capitalTitleLabel = capitalTitleLabel
+        self.callingCodeTitleLabel = callingCodeTitleLabel
+        self.regionTitleLabel = regionTitleLabel
+        self.subregionTitleLabel = subregionTitleLabel
+        self.timeZonesTitleLabel = timeZonesTitleLabel
+        self.currenciesTitleLabel = currenciesTitleLabel
+        self.languagesTitleLabel = languagesTitleLabel
+        self.capitalLabel = capitalLabel
+        self.callingCodeLabel = callingCodeLabel
+        self.regionLabel = regionLabel
+        self.subregionLabel = subregionLabel
+        self.timeZonesLabel = timeZonesLabel
+        self.currenciesLabel = currenciesLabel
+        self.languagesLabel = languagesLabel
+        loadViewIfNeeded()
+        view.addSubview(flagImageView)
+        view.addSubview(capitalTitleLabel)
+        view.addSubview(callingCodeTitleLabel)
+        view.addSubview(regionTitleLabel)
+        view.addSubview(subregionTitleLabel)
+        view.addSubview(timeZonesTitleLabel)
+        view.addSubview(currenciesTitleLabel)
+        view.addSubview(languagesTitleLabel)
+        view.addSubview(capitalLabel)
+        view.addSubview(callingCodeLabel)
+        view.addSubview(regionLabel)
+        view.addSubview(subregionLabel)
+        view.addSubview(timeZonesLabel)
+        view.addSubview(currenciesLabel)
+        view.addSubview(languagesLabel)
+    }
     
     required init(coder: NSCoder, viewModel: TMCountryViewModeling, imageCache: TMImageCache) {
         super.init(coder: coder)!

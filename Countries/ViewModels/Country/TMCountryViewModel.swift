@@ -1,19 +1,5 @@
 import UIKit
 
-private extension String {
-    
-    func noneTextIfEmpty() -> String {
-        self == "" ? .noneText : self
-    }
-}
-
-private extension Optional where Wrapped == String {
-    
-    func noneTextIfNilOrEmpty() -> String {
-        self == nil || self! == "" ? .noneText : self!
-    }
-}
-
 class TMCountryViewModel {
     
     private let country: TMCountry
@@ -102,43 +88,55 @@ class TMCountryViewModel {
     }
     
     private func createCountryName() -> String {
-        return country.name.noneTextIfEmpty()
+        return country.name.nilIfEmpty() ?? .noneText
     }
     
     private func createCapitalText() -> String {
-        return country.capital.noneTextIfEmpty()
+        return country.capital.nilIfEmpty() ?? .noneText
     }
     
     private func createCallingCodeText() -> String {
-        return country.callingCodes.count > 0
-            ? country.callingCodes.joined(separator: .commaSeparatorText)
-            : "None"
+        var strings = country.callingCodes.map({ $0 })
+        strings = strings.filter({ !$0.isOnlyWhitespace() })
+        if strings.count > 0 {
+            return strings.joined(separator: .commaSeparatorText)
+        }
+        return .noneText
     }
     
     private func createRegionText() -> String {
-        return country.region.noneTextIfEmpty()
+        return country.region.nilIfEmpty() ?? .noneText
     }
     
     private func createSubregionText() -> String {
-        return country.subregion.noneTextIfNilOrEmpty()
+        return country.subregion.nilIfEmpty() ?? .noneText
     }
     
     private func createTimeZonesText() -> String {
-        return country.timeZones != nil && country.timeZones!.count > 0
-            ? country.timeZones!.map { $0 }.joined(separator: .commaSeparatorText)
-            : .noneText
+        var strings = country.timeZones.map({ $0 })
+        strings = strings.filter({ !$0.isOnlyWhitespace() })
+        if strings.count > 0 {
+            return strings.joined(separator: .commaSeparatorText)
+        }
+        return .noneText
     }
     
     private func createCurrenciesText() -> String {
-        return country.currencies != nil && country.currencies!.count > 0
-            ? country.currencies!.map { $0.displayString }.joined(separator: .commaSeparatorText)
-            : .noneText
+        var strings = country.currencies.map({ $0.displayString })
+        strings = strings.filter({ !$0.isOnlyWhitespace() })
+        if strings.count > 0 {
+            return strings.joined(separator: .commaSeparatorText)
+        }
+        return .noneText
     }
     
     private func createLanguagesText() -> String {
-        return country.languages.count > 0
-            ? country.languages.map { $0.displayString }.joined(separator: .commaSeparatorText)
-            : .noneText
+        var strings = country.languages.map { $0.displayString }
+        strings = strings.filter({ !$0.isOnlyWhitespace() })
+        if strings.count > 0 {
+            return strings.joined(separator: .commaSeparatorText)
+        }
+        return .noneText
     }
 }
 
