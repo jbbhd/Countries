@@ -1,6 +1,11 @@
 import UIKit
 import Combine
 
+private extension TimeInterval {
+    
+    static let delayToAccountForTyping: TimeInterval = 0.1
+}
+
 class TMCountriesViewModel {
     
     let numberOfCountries = CurrentValueSubject<Int, Never>(0)
@@ -9,13 +14,13 @@ class TMCountriesViewModel {
     
     private let searcher: TMCountriesSearching
     
-    private weak var selectionDelegate: TMCountriesViewModelDelegate?
+    private weak var delegate: TMCountriesViewModelDelegate?
     
     private var searchID = arc4random()
-    
-    init(searcher: TMCountriesSearching, selectionDelegate: TMCountriesViewModelDelegate?) {
+        
+    init(searcher: TMCountriesSearching, delegate: TMCountriesViewModelDelegate?) {
         self.searcher = searcher
-        self.selectionDelegate = selectionDelegate
+        self.delegate = delegate
     }
     
     private func setCountries(_ countries: [TMCountry]) {
@@ -35,25 +40,27 @@ extension TMCountriesViewModel: TMCountriesViewModeling {
     }
     
     func didSelectCountry(at index: Int) {
-        selectionDelegate?.countriesViewModel(self, didSelectCountry: countries[index])
+        delegate?.countriesViewModel(self, didSelectCountry: countries[index])
     }
     
     func didChangeQuery(_ query: String) {
         let thisSearchID = arc4random()
         searchID = thisSearchID
-        if query == "" {
-            setCountries([])
-            return
-        }
-        searcher.countriesWithName(query) { [weak self] (result) in
-            guard let self = self else { return }
-            guard thisSearchID == self.searchID else { return }
-            switch result {
-            case .failure(let error):
-                // FIXME: Handle error.
-                print(error)
-            case .success(let countries):
-                self.setCountries(countries)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .delayToAccountForTyping) {
+            guard self.searchID == thisSearchID else { return }
+            if query == "" {
+                self.setCountries([])
+                return
+            }
+            self.searcher.countriesWithName(query) { (result) in
+                guard self.searchID == thisSearchID else { return }
+                switch result {
+                case .failure(let error):
+                    // FIXME: Handle error.
+                    print(error)
+                case .success(let countries):
+                    self.setCountries(countries)
+                }
             }
         }
     }

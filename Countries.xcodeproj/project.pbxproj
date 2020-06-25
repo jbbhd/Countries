@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03318B8A24A408FB004058FD /* TMCountry+luxembourg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318B8924A408FB004058FD /* TMCountry+luxembourg.swift */; };
+		03318B8C24A40916004058FD /* TMCountry+theVatican.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318B8B24A40916004058FD /* TMCountry+theVatican.swift */; };
+		03318B8E24A442A1004058FD /* MockSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318B8D24A442A1004058FD /* MockSearcher.swift */; };
+		03318B9024A442C8004058FD /* MockSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318B8F24A442C8004058FD /* MockSelectionDelegate.swift */; };
+		03318B9324A4430E004058FD /* TMCountryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318B9224A4430E004058FD /* TMCountryViewModelTests.swift */; };
+		03318B9824A4FB53004058FD /* TMCountryTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318B9724A4FB53004058FD /* TMCountryTableViewCellTests.swift */; };
+		03318B9A24A508CB004058FD /* MockImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318B9924A508CB004058FD /* MockImageCache.swift */; };
 		033A4D5724A25F5100A4C634 /* TMRESTCountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D5624A25F5100A4C634 /* TMRESTCountriesAPI.swift */; };
 		033A4D5924A2614800A4C634 /* TMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D5824A2614800A4C634 /* TMError.swift */; };
 		033A4D6124A2724A00A4C634 /* TMJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A4D6024A2724A00A4C634 /* TMJSONDecoder.swift */; };
@@ -78,6 +85,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03318B8924A408FB004058FD /* TMCountry+luxembourg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMCountry+luxembourg.swift"; sourceTree = "<group>"; };
+		03318B8B24A40916004058FD /* TMCountry+theVatican.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMCountry+theVatican.swift"; sourceTree = "<group>"; };
+		03318B8D24A442A1004058FD /* MockSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearcher.swift; sourceTree = "<group>"; };
+		03318B8F24A442C8004058FD /* MockSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSelectionDelegate.swift; sourceTree = "<group>"; };
+		03318B9224A4430E004058FD /* TMCountryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountryViewModelTests.swift; sourceTree = "<group>"; };
+		03318B9724A4FB53004058FD /* TMCountryTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCountryTableViewCellTests.swift; sourceTree = "<group>"; };
+		03318B9924A508CB004058FD /* MockImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageCache.swift; sourceTree = "<group>"; };
 		033A4D5624A25F5100A4C634 /* TMRESTCountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMRESTCountriesAPI.swift; sourceTree = "<group>"; };
 		033A4D5824A2614800A4C634 /* TMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMError.swift; sourceTree = "<group>"; };
 		033A4D5A24A266A100A4C634 /* TMRESTCountriesAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMRESTCountriesAPITests.swift; sourceTree = "<group>"; };
@@ -148,6 +162,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03318B8824A408E8004058FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0359DCA024A280A2003C0E62 /* Result+isFailure.swift */,
+				0359DCA224A280AB003C0E62 /* Result+isSuccess.swift */,
+				03318B8924A408FB004058FD /* TMCountry+luxembourg.swift */,
+				03318B8B24A40916004058FD /* TMCountry+theVatican.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03318B9124A442F2004058FD /* TMCountryViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				03318B9224A4430E004058FD /* TMCountryViewModelTests.swift */,
+			);
+			path = TMCountryViewModel;
+			sourceTree = "<group>";
+		};
+		03318B9624A4FB48004058FD /* TMCountryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				03318B9924A508CB004058FD /* MockImageCache.swift */,
+				03318B9724A4FB53004058FD /* TMCountryTableViewCellTests.swift */,
+			);
+			path = TMCountryTableViewCell;
+			sourceTree = "<group>";
+		};
 		033A4D5C24A2721E00A4C634 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,10 +303,11 @@
 		03B8667624A25ED900E7FEF5 /* CountriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				03318B8824A408E8004058FD /* Extensions */,
 				03FF3B3124A29F0700384353 /* TMCountriesViewModel */,
+				03318B9624A4FB48004058FD /* TMCountryTableViewCell */,
+				03318B9124A442F2004058FD /* TMCountryViewModel */,
 				03FF3B2B24A2988300384353 /* TMRESTCountriesAPI */,
-				0359DCA024A280A2003C0E62 /* Result+isFailure.swift */,
-				0359DCA224A280AB003C0E62 /* Result+isSuccess.swift */,
 				03B8667924A25ED900E7FEF5 /* Info.plist */,
 			);
 			path = CountriesTests;
@@ -302,11 +345,11 @@
 		03FF3B2B24A2988300384353 /* TMRESTCountriesAPI */ = {
 			isa = PBXGroup;
 			children = (
-				033A4D5A24A266A100A4C634 /* TMRESTCountriesAPITests.swift */,
-				0359DCA624A28225003C0E62 /* MockURLSessionDataTask.swift */,
-				03FF3B1824A2882900384353 /* MockJSONDecoder.swift */,
 				0359DCA824A2825E003C0E62 /* MockHTTPURLResponse.swift */,
+				03FF3B1824A2882900384353 /* MockJSONDecoder.swift */,
 				0359DCA424A28214003C0E62 /* MockURLSession.swift */,
+				0359DCA624A28225003C0E62 /* MockURLSessionDataTask.swift */,
+				033A4D5A24A266A100A4C634 /* TMRESTCountriesAPITests.swift */,
 			);
 			path = TMRESTCountriesAPI;
 			sourceTree = "<group>";
@@ -314,6 +357,8 @@
 		03FF3B3124A29F0700384353 /* TMCountriesViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				03318B8D24A442A1004058FD /* MockSearcher.swift */,
+				03318B8F24A442C8004058FD /* MockSelectionDelegate.swift */,
 				03FF3B3224A29F1D00384353 /* TMCountriesViewModelTests.swift */,
 			);
 			path = TMCountriesViewModel;
@@ -504,11 +549,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				03FF3B1924A2882900384353 /* MockJSONDecoder.swift in Sources */,
+				03318B9824A4FB53004058FD /* TMCountryTableViewCellTests.swift in Sources */,
+				03318B8A24A408FB004058FD /* TMCountry+luxembourg.swift in Sources */,
+				03318B8E24A442A1004058FD /* MockSearcher.swift in Sources */,
+				03318B9324A4430E004058FD /* TMCountryViewModelTests.swift in Sources */,
 				0359DCA524A28214003C0E62 /* MockURLSession.swift in Sources */,
 				0359DCA924A2825E003C0E62 /* MockHTTPURLResponse.swift in Sources */,
+				03318B9A24A508CB004058FD /* MockImageCache.swift in Sources */,
 				03FF3B3324A29F1D00384353 /* TMCountriesViewModelTests.swift in Sources */,
 				0359DCA724A28225003C0E62 /* MockURLSessionDataTask.swift in Sources */,
+				03318B8C24A40916004058FD /* TMCountry+theVatican.swift in Sources */,
 				03FF3B1324A285C100384353 /* TMRESTCountriesAPITests.swift in Sources */,
+				03318B9024A442C8004058FD /* MockSelectionDelegate.swift in Sources */,
 				0359DCA324A280AB003C0E62 /* Result+isSuccess.swift in Sources */,
 				0359DCA124A280A2003C0E62 /* Result+isFailure.swift in Sources */,
 			);

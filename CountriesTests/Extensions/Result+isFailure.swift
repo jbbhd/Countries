@@ -1,13 +1,14 @@
 import UIKit
+@testable import Countries
 
 extension Result {
-    
-    func isSuccess() -> Bool {
+
+    func isFailure() -> Bool {
         switch self {
         case .failure:
-            return false
-        case .success:
             return true
+        case .success:
+            return false
         }
     }
 }

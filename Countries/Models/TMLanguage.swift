@@ -4,7 +4,7 @@ struct TMLanguage: Codable {
     
     let codeISO639_1: String?
     let codeISO639_2: String?
-    let name: String?
+    let name: String
     let nativeName: String?
     
     enum CodingKeys: String, CodingKey {
@@ -13,4 +13,12 @@ struct TMLanguage: Codable {
         case name
         case nativeName
     }
+    
+    var displayString: String {
+        return name
+    }
+}
+
+extension TMLanguage: Equatable {
+    
 }

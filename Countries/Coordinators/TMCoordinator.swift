@@ -49,7 +49,7 @@ class TMCoordinator {
         let initialViewController = storyboard.instantiateViewController(identifier: .countriesStoryboardID, creator: { coder in
             let countriesAPI = TMRESTCountriesAPI()
             let countriesSearchCache = TMCountriesSearchCache(searcher: countriesAPI)
-            let viewModel = TMCountriesViewModel(searcher: countriesSearchCache, selectionDelegate: self)
+            let viewModel = TMCountriesViewModel(searcher: countriesSearchCache, delegate: self)
             return self.countriesViewControllerType.init(coder: coder, viewModel: viewModel, imageCache: self.sharedImageCache)
         })
         rootViewController.pushViewController(initialViewController, animated: false)

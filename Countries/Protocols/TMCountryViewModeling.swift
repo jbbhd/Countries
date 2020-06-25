@@ -4,6 +4,7 @@ protocol TMCountryViewModeling: class {
     
     var flagURL: URL? { get }
     var countryName: String { get }
+    
     var capitalTitleText: String { get }
     var callingCodeTitleText: String { get }
     var regionTitleText: String { get }
@@ -11,6 +12,7 @@ protocol TMCountryViewModeling: class {
     var timeZonesTitleText: String { get }
     var currenciesTitleText: String { get }
     var languagesTitleText: String { get }
+    
     var capitalText: String { get }
     var callingCodeText: String { get }
     var regionText: String { get }

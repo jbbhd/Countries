@@ -2,6 +2,20 @@ import UIKit
 
 private extension String {
     
+    func noneIfEmpty() -> String {
+        self == "" ? .none : self
+    }
+}
+
+private extension Optional where Wrapped == String {
+    
+    func noneIfNilOrEmpty() -> String {
+        self == nil || self! == "" ? .none : self!
+    }
+}
+
+private extension String {
+    
     static let none = "None"
     static let commaSeparator = ", "
     static let capitalTitle = "Capital"
@@ -60,6 +74,7 @@ class TMCountryViewModel {
         self.subregionTitleText      = createSubregionTitleText()
         self.timeZonesTitleText      = createTimeZonesTitleText()
         self.currenciesTitleText     = createCurrenciesTitleText()
+        self.languagesTitleText      = createLangugesTitleText()
         
         self.countryName        = createCountryName()
         self.capitalText        = createCapitalText()
@@ -68,6 +83,7 @@ class TMCountryViewModel {
         self.subregionText      = createSubregionText()
         self.timeZonesText      = createTimeZonesText()
         self.currenciesText     = createCurrenciesText()
+        self.languagesText      = createLanguagesText()
     }
     
     private func createCapitalTitleText() -> String {
@@ -94,12 +110,16 @@ class TMCountryViewModel {
         return .currenciesTitle + ":"
     }
     
+    private func createLangugesTitleText() -> String {
+        return .languagesTitle + ":"
+    }
+    
     private func createCountryName() -> String {
-        return country.name
+        return country.name.noneIfEmpty()
     }
     
     private func createCapitalText() -> String {
-        return country.capital
+        return country.capital.noneIfEmpty()
     }
     
     private func createCallingCodeText() -> String {
@@ -109,27 +129,28 @@ class TMCountryViewModel {
     }
     
     private func createRegionText() -> String {
-        return country.region
+        return country.region.noneIfEmpty()
     }
     
     private func createSubregionText() -> String {
-        return country.subregion ?? .none
+        return country.subregion.noneIfNilOrEmpty()
     }
     
     private func createTimeZonesText() -> String {
         return country.timeZones != nil && country.timeZones!.count > 0
-            ? country.timeZones!.map { $0.description }.joined(separator: .commaSeparator)
+            ? country.timeZones!.map { $0 }.joined(separator: .commaSeparator)
             : .none
     }
     
     private func createCurrenciesText() -> String {
         return country.currencies != nil && country.currencies!.count > 0
-            ? country.currencies!.map {
-                if let name = $0.name, let symbol = $0.symbol {
-                    return "\(name) (\(symbol))"
-                }
-                return $0.name ?? $0.symbol ?? ""
-            }.joined(separator: .commaSeparator)
+            ? country.currencies!.map { $0.displayString }.joined(separator: .commaSeparator)
+            : .none
+    }
+    
+    private func createLanguagesText() -> String {
+        return country.languages.count > 0
+            ? country.languages.map { $0.displayString }.joined(separator: .commaSeparator)
             : .none
     }
 }

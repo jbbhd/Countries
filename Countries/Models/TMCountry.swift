@@ -24,3 +24,19 @@ struct TMCountry: Decodable {
         case languages
     }
 }
+
+extension TMCountry: Equatable {
+    static func == (lhs: TMCountry, rhs: TMCountry) -> Bool {
+        return lhs.name         == rhs.name
+            && lhs.flagURL      == rhs.flagURL
+            && lhs.capital      == rhs.capital
+            && lhs.callingCodes == rhs.callingCodes
+            && lhs.region       == rhs.region
+            && lhs.subregion    == rhs.subregion
+            && lhs.timeZones    == rhs.timeZones
+            && lhs.currencies   == rhs.currencies
+            && lhs.languages    == rhs.languages
+    }
+    
+    
+}
