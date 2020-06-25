@@ -1,56 +1,47 @@
 import UIKit
 
-private extension String {
-    
-    static let storyboardName = "Main"
-    static let countriesStoryboardID = "TMCountriesViewController"
-    static let countryStoryboardID = "TMCountryViewController"
-}
-
 class TMCoordinator {
-    
-    typealias InitialViewControllerInit = (NSCoder, TMCountriesViewModeling, TMImageCache) -> UIViewController
-    
+        
     typealias RootViewController = TMRootViewController & UIViewController
 
-    typealias CountriesViewController = TMCountriesViewControllerIniting & UIViewController
-    
-    typealias CountryViewController = TMCountryViewControllerIniting & UIViewController
+    typealias CountriesViewControllerInfo = (storyboardID: String, type: (TMCountriesViewControllerIniting & UIViewController).Type)
+        
+    typealias CountryViewControllerInfo = (storyboardID: String, type: (TMCountryViewControllerIniting & UIViewController).Type)
     
     private let window: TMWindow
     
     private let rootViewController: RootViewController
     
-    private let storyboard: TMStoryboard
+    let storyboard: TMStoryboard
     
-    private let countriesViewControllerType: CountriesViewController.Type
+    private let countriesViewControllerInfo: CountriesViewControllerInfo
     
-    private let countryViewControllerType: CountryViewController.Type
+    private let countryViewControllerInfo: CountryViewControllerInfo
     
     private let sharedImageCache: TMImageCache
         
     init(
         window: TMWindow,
         rootViewController: RootViewController = UINavigationController(),
-        storyboard: TMStoryboard = UIStoryboard(name: .storyboardName, bundle: nil),
-        countriesViewControllerType: CountriesViewController.Type,
-        countryViewControllerType: CountryViewController.Type,
+        storyboard: TMStoryboard,
+        countriesViewControllerInfo: CountriesViewControllerInfo,
+        countryViewControllerInfo: CountryViewControllerInfo,
         sharedImageCache: TMImageCache) {
         self.window = window
         self.rootViewController = rootViewController
-        self.storyboard = UIStoryboard(name: .storyboardName, bundle: nil)
-        self.countriesViewControllerType = countriesViewControllerType
-        self.countryViewControllerType = countryViewControllerType
+        self.storyboard = storyboard
+        self.countriesViewControllerInfo = countriesViewControllerInfo
+        self.countryViewControllerInfo = countryViewControllerInfo
         self.sharedImageCache = sharedImageCache
         window.rootViewController = rootViewController
     }
     
     func setInitialViewController() {
-        let initialViewController = storyboard.instantiateViewController(identifier: .countriesStoryboardID, creator: { coder in
+        let initialViewController = storyboard.instantiateViewController(identifier: countriesViewControllerInfo.storyboardID, creator: { coder in
             let countriesAPI = TMRESTCountriesAPI()
             let countriesSearchCache = TMCountriesSearchCache(searcher: countriesAPI)
             let viewModel = TMCountriesViewModel(searcher: countriesSearchCache, delegate: self)
-            return self.countriesViewControllerType.init(coder: coder, viewModel: viewModel, imageCache: self.sharedImageCache)
+            return self.countriesViewControllerInfo.type.init(coder: coder, viewModel: viewModel, imageCache: self.sharedImageCache)
         })
         rootViewController.pushViewController(initialViewController, animated: false)
         window.makeKeyAndVisible()
@@ -60,9 +51,9 @@ class TMCoordinator {
 extension TMCoordinator: TMCountriesViewModelDelegate {
     
     func countriesViewModel(_ viewModel: TMCountriesViewModel, didSelectCountry country: TMCountry) {
-        let countryViewController = storyboard.instantiateViewController(identifier: .countryStoryboardID) { coder in
+        let countryViewController = storyboard.instantiateViewController(identifier: countryViewControllerInfo.storyboardID) { coder in
             let countryViewModel = TMCountryViewModel(country: country)
-            return self.countryViewControllerType.init(coder: coder, viewModel: countryViewModel, imageCache: self.sharedImageCache)
+            return self.countryViewControllerInfo.type.init(coder: coder, viewModel: countryViewModel, imageCache: self.sharedImageCache)
         }
         rootViewController.pushViewController(countryViewController, animated: true)
     }

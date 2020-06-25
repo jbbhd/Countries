@@ -1,11 +1,6 @@
 import UIKit
 import SDWebImage
 
-private extension String {
-    
-    static let flagThumbnailImageName = "FlagThumbnail"
-}
-
 class SDWebImageAsTMImageCache: TMImageCache {
     
     func setImage(at url: URL?, to imageView: UIImageView?) {

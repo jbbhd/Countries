@@ -14,8 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         coordinator = TMCoordinator(
             window: window,
-            countriesViewControllerType: TMCountriesViewController.self,
-            countryViewControllerType: TMCountryViewController.self,
+            storyboard: UIStoryboard(name: .storyboardName, bundle: nil),
+            countriesViewControllerInfo: (.countriesStoryboardID, TMCountriesViewController.self),
+            countryViewControllerInfo: (.countryStoryboardID, TMCountryViewController.self),
             sharedImageCache: SDWebImageAsTMImageCache())
         coordinator.setInitialViewController()
     }
